@@ -2,10 +2,17 @@
     box-sizing: border-box;
 }
 html {
-    font-size: 16px;
+    font-size: 10px;
+    
 }
 body {
+    width: 100%;
+    height: 100%;
     overflow-x:hidden;
+    background: rgba(0, 0, 0, 0.945);
+    padding: 0px 45px 0px 7px;
+    margin: 0px;
+    font-family: "Roboto",sans-serif;
 }
 body.active {
     overflow-y: hidden;
@@ -32,4 +39,213 @@ li {
 a {
     text-decoration: none;
     color: black;
+}
+button {
+    padding: 0px;
+    border-width: 0px;
+    border-style: none;
+    border-color: none;
+    background: none;
+}
+                                            /* Код */
+
+.header {
+    display: flex;
+    width: 100%;
+    height: 56px;
+    text-align: center;
+    align-items: center;
+}
+.menu {
+    display: flex;
+    width: 100%;
+    height: 56px;
+}
+.menu-btn {
+    position: relative;
+    align-self: center;
+    width: 24px;
+    height: 24px;
+    padding: 8px;
+    margin-top: -2px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.menu-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    transform: translate(-22%, -20%);
+    background-color: rgb(73, 72, 72);
+    border-radius: 50%;
+    padding: 5px;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.menu-btn:hover::before {
+    opacity: 1;
+    z-index: -1;
+}
+.menu-btn .bar {
+    width: 18px;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    border-radius: 4px;
+    background-color: white;
+    transition: transform 0.3s ease;
+}
+.menu-btn .bar:nth-of-type(2) {
+    top: calc(50% - 6px);
+}
+.menu-btn .bar:nth-of-type(3) {
+    top: calc(50% + 6px);
+}
+.logo {
+    position: relative;
+    display: flex;
+    width: 90px;
+    margin-left: 27px;
+}
+.logo::after {
+    position: absolute;
+    content: "RU";
+    color: gray;
+    font-size: 10px;
+    right: -17px;
+    top: 12px;
+}
+.btn-block {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    margin-right: 13px;
+    margin-top: 3px;
+}
+.btn {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+.button-container {
+    width: fit-content;
+    position: relative;
+    display: inline-block;
+}
+
+.icon {
+    position: relative;
+    z-index: 1;
+    transition: z-index 0.3s ease-in-out;
+}
+
+.button-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    transform: translate(-20%, -20%);
+    background-color: rgb(73, 72, 72);
+    border-radius: 50%;
+    padding: 5px;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 0.1s ease-in-out;
+}
+
+.button-container:hover::before {
+    opacity: 1;
+    z-index: -1;
+}
+.avatar {
+    padding: 0px 8px 0px 8px;
+    margin-top: -10px;
+    margin-right: 10px;
+}
+                                                                    /* MAIN */
+.main-block {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-top: 30px;
+    padding-left: 17px;
+}
+.wraper {
+    width: 100%;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.main-title {
+    width: fit-content;
+    color: #f1f1f1;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    font-weight: 500;
+    overflow: hidden;
+    display: block;
+    max-height: 2.2rem;
+}
+.container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+}
+
+.subscription-management {
+    color: #3ea6ff;
+    font-size: 14px;
+    line-height: 36px;
+    margin-right: 8px;
+}
+.subscription-container {
+    position: relative;
+    display: inline-block;
+}
+.subscription-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -15px;
+    width: 108%;
+    height: 26px;
+    background-color: rgba(62, 165, 255, 0.329);
+    border-radius: 24px;
+    padding: 5px;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 0.1s ease-in-out;
+}
+.subscription-container:hover::before {
+    opacity: 1;
+    z-index: -1;
+}
+.netting {
+    margin-top: 3px;
+}
+.catalog {
+    margin-top: 3px;
+    margin-right: 3px;
+}
+                                                                    /* VIDEO */
+.content-block {
+    color: #f1f1f1;
+    width: 100%;
+    height: 100%;  
+}
+
+                                                                /* Active MENU */
+.menu_active {
+    display: none;
 }
